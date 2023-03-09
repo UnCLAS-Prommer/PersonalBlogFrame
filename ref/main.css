@@ -1,0 +1,695 @@
+html, body {
+    background-color: #fff;
+    font-size:16px;
+}
+@media all and (max-width: 960px) {
+    html, body {
+        font-size:20px;
+        line-height: 30px;
+    }
+}
+body {
+    color: #444444;
+    padding: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    line-height: 120%;
+    text-align: justify;
+}
+h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    margin-top: 0;
+	padding-top: 1em;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+    text-align: center;
+}
+h2 {
+    font-size: 1.4em;
+    line-height: 1.1em;
+    margin-top: 1.8em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+}
+h2, h3, h4, h5, p {
+    margin-bottom: 0.2em;
+    padding: 0;
+    margin-top: 1em;
+}
+h2 {
+    font-size: 2em;
+    /* these are chapter headings; need to set them off somehow */
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+#toc_container h2, h2:first-of-type {
+    border: none;
+    padding: 0;
+}
+h3 {
+    font-size: 1.4em;
+}
+h4 {
+    font-size: 1.1em;
+}
+div.conversation > h4{
+	text-indent: 1em
+}
+h5 {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    /*width: 100%;*/
+    font-size: 92%;
+}
+
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms;
+}
+a:active {
+    color: #003c67;
+}
+li {
+    line-height: 24px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+.toc li ul, .toc li ul {
+    margin-left: 0;
+    /*padding-left: 2.5em;*/
+}
+.toc a {
+	text-decoration: none;
+}
+.prenext{
+	position:fixed;
+	bottom:10px;
+}
+div.indent p{
+    text-indent: 2em;
+}
+table > p {
+    text-align: left;
+    -webkit-hyphens: none;
+    -ms-hyphens:none;
+    -moz-hyphens:none;
+    hyphens: none;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 90%;
+    white-space: pre-wrap;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+.last_modified {
+    font-size: 90%;
+    color: #666;
+    margin-top:0;
+}
+.previous{
+    float: right;
+	position:relative;
+	bottom: 10px;
+}
+.next{
+    position: fixed;
+	right: 30px;
+	bottom: 10px;
+}
+#manual_wrapper {
+    text-align: left;
+    padding: 0 5% 30px 5%;
+}
+#manual_wrapper.expanded, #manual_wrapper.no-toc {
+    padding: 0 5% 30px 5% !important;
+}
+
+#toc_container {
+    float: right;
+    margin: 0 0 2em 2em;
+    width: 300px;
+}
+
+#toc_container h2 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.invert {
+    float: right;
+    cursor: pointer;
+}
+@media all and (max-width: 985px) {
+    #toc_container {
+        margin-right: 5%;
+    }
+    #toc_container.hidden {
+        width: 25%;
+    }
+	.previous{
+    	margin-right: 5%;
+	}
+}
+
+/*** If your browser is marginally tall and fairly wide, we do a fixed position contents sidebar ***/
+@media all and (min-height: 500px) and (min-width: 986px) and (min-device-width: 1025px) {
+	#manual_wrapper {
+		/*padding-top:40px;*/
+		padding-right: 35%;
+    }
+    #manual_wrapper.expanded {
+		padding-top:75px !important;
+		padding-right: 35% !important;
+    }
+    #toc_container {
+		float: none;
+		overflow-y:auto;
+		display: block;
+		position: fixed;
+		right: 0;
+		top: -1px;
+		padding-top: 1em;
+		padding-right: 10px;
+		margin:0;
+		border-right: none;
+		font-size: 90%;
+		height: 100% !important;
+		background: rgba(241,241,241,0.6);
+		box-shadow: 1px 1px 4px #333;
+	}
+	#toc_container.expanded {
+		overflow-y:auto !important;
+		height: 100% !important;
+	}
+	.toc_title .toc_toggle {
+	   	display: none; /* don't allow toggling of the side menu as a whole */
+	}
+	#toc_container.hidden {
+		width:160px !important;
+	}
+	.previous{
+		position: fixed;
+		right: 200px;
+	}
+}
+
+@media all and (min-height: 500px) and (min-width: 986px) and (max-width: 1149px) and (min-device-width: 1025px) {
+    #manual_wrapper {
+        padding-top: 75px;
+    }
+}
+
+@media all and (min-height: 500px) and (min-width: 1150px) and (min-device-width: 1025px) {
+    #manual_wrapper {
+        padding-right: 335px;
+    }
+    #manual_wrapper.expanded {
+        padding-right: 335px !important;
+    }
+    #toc_container {
+        width:288px;
+        padding-right: 10px;
+    }
+    #toc_container.expanded {
+        width:288px !important;
+    }
+    ul.menu li, ul.menu li:last-child {
+        border-bottom: 1px solid #333;
+    }
+    ul.menu li:nth-child(7n) {
+        border-right: 0px transparent none;
+    }
+}
+
+@media print
+{
+    h1,h2 {
+        page-break-before:always;
+    }
+    #toc_container {
+        display: none !important;
+    }
+}
+.po {
+	font-size: 0.9em;
+	text-indent: -0.8em;
+	padding: 0 0.1em 0.1em 1em;
+	color: #960014;
+}
+li {
+	clear: both;
+	display: block;
+}
+rt {
+	font-size: 0.7em;
+}
+details > p{
+	text-indent: 3em !important;
+}
+.nodeco{
+	text-decoration: none;
+}
+.nodeco:hover{
+	font-weight:bold;
+}
+td {
+	padding: 3px 0;
+}
+.bold {
+	font-weight: bold;
+}
+.color1 {
+	color: #8083bb;
+}
+.color2 {
+	color: #a77495;
+}
+.colorc1 {
+	color: #68718e;
+}
+.colorc2 {
+	color: #f8b662;
+}
+.colorco {
+	color: #d0ebf1;
+}
+.colorw {
+	color: #eee;
+}
+.bodycolor {
+	background-color: #f5d5e7;
+}
+.blackshadow {
+	text-shadow: 1px 1px 1px #000;
+}
+.in0 {
+	text-indent: 0;
+}
+.center p{
+	text-indent: 0 !important;
+	text-align: center;
+}
+.center{
+	text-indent: 0 !important;
+	text-align: center;
+}
+.tdtop {
+	vertical-align: top;
+}
+.tdbottom {
+	vertical-align: bottom;
+}
+.tdmiddle {
+	vertical-align: middle;
+}
+.tdcenter {
+	margin: 0 auto;
+}
+.fleft {
+	float: left;
+}
+.fright {
+	float: right;
+}
+.wanzheng {
+	white-space: nowrap;
+}
+.htop {
+	margin-top: 25%;
+}
+.hcenter {
+	margin-top: 50%;
+}
+.hbottom {
+	margin-top: 90%;
+}
+.pbottom {
+	position: fixed;
+	bottom: -1em;
+}
+.italic {
+	font-style: italic;
+}
+.in2 {
+	text-indent: 2em;
+}
+.in4 {
+	text-indent: 4em;
+}
+.del {
+	text-decoration: line-through;
+}
+.mtb13 {
+	margin: -1.3em 0 0 0;
+}
+.mtb09 {
+	margin: -0.9em 0 0 0;
+}
+.mtb05 {
+	margin: -0.5em 0 0 0;
+}
+.mtb03 {
+	margin: -0.3em 0 0 0;
+}
+.mtb01 {
+	margin: -0.1em 0 0 0;
+}
+.mt01 {
+	margin: 0.1em 0 0 0;
+}
+.mt03 {
+	margin: 0.3em 0 0 0;
+}
+.mt05 {
+  margin: 0.5em 0 0 0;
+}
+.mt09 {
+  margin: 0.9em 0 0 0;
+}
+.mt12 {
+  margin: 1.2em 0 0 0;
+}
+.mt15 {
+  margin: 1.5em 0 0 0;
+}
+.mt18 {
+  margin: 1.8em 0 0 0;
+}
+.mbt0 {
+  margin: 0 0 0 0;
+}
+.mbt05 {
+  margin: 0.5em 0 0.5em 0;
+}
+.mbt09 {
+  margin: 0.9em 0 0.9em 0;
+}
+.mbt15 {
+  margin: 1.5em 0 1.5em 0;
+}
+.mbt18 {
+  margin: 1.8em 0 1.8em 0;
+}
+.mbt20 {
+  margin: 2em 0 2em 0;
+}
+.mbt30 {
+  margin: 3em 0 3em 0;
+}
+.mbt40 {
+  margin: 4em 0 4em 0;
+}
+.mb09 {
+  margin: 0 0 0.9em 0;
+}
+.mb14t22 {
+  margin: 2.2em 0 1.4em 0;
+}
+.ml01 {
+  margin: 0 0 0 0.1em;
+}
+.ml024 {
+  margin: 0 0 0 0.24em;
+}
+.pt05 {
+  padding: 0.5em 0 0 0;
+}
+.pt09 {
+  padding: 0.9em 0 0 0;
+}
+.pt12 {
+  padding: 1.2em 0 0 0;
+}
+.pbt04 {
+  padding: 0.4em 0 0.4em 0;
+}
+.pbt05 {
+  padding: 0.5em 0 0.5em 0;
+}
+.pbt09 {
+  padding: 0.9em 0 0.9em 0;
+}
+.box1 {
+  border-style: double;
+  border-color: #9d9b9c;
+  padding: 12px 6px;
+  margin: 26px 1px;
+  border-width: 3px;
+}
+.box2 {
+  border-style: solid;
+  border-color: #9d9b9c;
+  border-radius: 8px;
+  padding: 12px 6px;
+  margin: 26px 1px;
+  border-width: 2px;
+}
+span.frame1 {
+	font-size: 0.9em;
+	border-style: solid;
+	border-width: 1px;
+	background-color:transparent;
+}
+.colorblack {
+    color: #000000;
+    text-shadow: #A9A9A9 1px 1px 2px;
+}
+.colorgreen {
+    color: #32CD32;
+    text-shadow: #006400 1px 1px 2px;
+}
+.colorpink {
+    color: #FF69B4;
+    text-shadow: #FFB6C1 1px 1px 2px;
+}
+.colorpurple {
+    color: #8A2BE2;
+    text-shadow: #7B68EE 1px 1px 2px;
+}
+note{
+	font-style: italic;
+	color: rgba(139,169,214,0.85);
+}
+.inconversation{
+	max-width: 700px;
+	margin: 0px 0px 0px 4em;
+	background-color: rgba(239,238,238,0.7);
+	text-indent:2em;
+}
+div.conversation{
+	background-color: rgba(245,245,245,0.83);
+	padding-top: 0;
+	padding-right: 0.5em;
+	padding-left: 0;
+	padding-bottom: 0.5em;
+}
+div.conversation > hr{
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #E7E7E7;
+}
+hr.dot{
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    overflow: hidden;
+    border-style: dotted;
+    border-width: 2px;
+    border-color: rgba(231,231,231,0.9);
+}
+p.time{
+	font-size: 0.9em;
+	border-style: none;
+	border-width: 4px;
+	background-color: rgba(235,235,235,0.93);
+	color: #606060;
+	text-align: center;
+	margin: 0 42%;
+	text-indent: 0em!important;
+}
+span.chat_others_WeChat{
+	border-style: solid;
+	border-color: #EDEDED #EDEDED #EDEDED #CECECE;
+	border-width: 1px 1px 1px 4px;
+	border-radius: 4px;
+	padding:0.4em;
+	background-color:white;
+	line-height: 1.8em;
+}
+span.chat_myself_WeChat{
+	border-style: solid;
+	border-color: #EDEDED #5EC01B #EDEDED #EDEDED;
+	border-width: 1px 4px 1px 1px;
+	border-radius: 4px;
+	padding:0.4em;
+	background-color: #9EEA6A;
+	line-height: 1.8em;
+}
+span.chat_myself_WeChat_2{
+	border-style: solid;
+	border-color: #EDEDED #CECECE #EDEDED #EDEDED;
+	border-width: 1px 4px 1px 1px;
+	border-radius: 4px;
+	padding:0.4em;
+	background-color: white;
+	line-height: 1.8em;
+}
+span.chat_others_QQ{
+	border-style: solid;
+	border-color: #EDEDED #EDEDED #EDEDED #C2C2C2;
+	border-width: 1px 1px 1px 5px;
+	border-radius: 6px;
+	background-color: #E5E5E5;
+	color:black;
+	padding:0.4em 0.6em 0.4em 0.4em;
+	line-height: 1.8em;
+}
+span.chat_myself_QQ{
+	border-style: solid;
+	border-color: #EDEDED #09A1DA #EDEDED #EDEDED;
+	border-width: 1px 5px 1px 1px;
+	border-radius: 6px;
+	color:white;
+	padding:0.4em 0.4em 0.4em 0.6em;
+	background-color: #12B7F5;
+	line-height: 1.8em;
+}
+span.chat_myself_QQ_2{
+	border-style: solid;
+	border-color: #EDEDED #C2C2C2 #EDEDED #EDEDED;
+	border-width: 1px 5px 1px 1px;
+	border-radius: 6px;
+	color:black;
+	padding:0.4em 0.4em 0.4em 0.6em;
+	background-color: #E5E5E5;
+	line-height: 1.8em;
+}
+div.conversation > p{
+	line-height:normal;
+}
+.colorbrightred{
+	color: #CD3A3C;
+	text-shadow: 1px 1px 2px #9A282A;
+}
+div .transbox{
+	background-color: rgba(255,255,255,0.3);
+}
+img.topalign{
+	vertical-align: top;
+}
+/*图片配文字用格式*/
+.box {
+	max-width: 400px;
+	margin: 10px 0px 0px 4em;
+}
+.box_2img{
+	max-width: 800px;
+	max-height: 1000px;
+	margin: 10px 0px 0px 4em;
+}
+div .box-img {
+	max-width: 1000px;
+	max-height: 1000px;
+	text-align: center;
+	
+}
+.box-text {
+	text-align: center;
+	color: #9A9A9A;
+	/*text-indent: 0em!important;*/
+	/*margin-left: 4em;*/
+	max-width: 800px;
+}
+/*command 模拟格式*/
+div .command_screen{
+	margin: 0 0 0 2em;
+	padding: 0.1em 0em 0.2em 0em;
+}
+.command_screen summary{
+	font-weight: bold;
+	margin:0.7em;
+}
+.command_screen p{
+	color: #0DD424;
+	font-weight: bold;
+	margin:0.7em;
+}
+/*<hidding>的CSS*/
+hidding{
+	text-shadow: none;
+	color: #252525;
+	background-color: #252525;
+	transition: color 0.13s;
+	padding-right: 2px;
+	padding-left: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+hidding > ruby > rt{
+	text-shadow: none;
+	color: #252525;
+	background-color: #252525;
+	transition: color 0.13s;
+	padding: 0px;
+}
+hidding > ruby > rt:hover{
+	color: #F9F9F9;
+}
+hidding > a{
+	color: #252525;
+}
+hidding:hover{
+	color: #F9F9F9;
+}
+hidding > a:hover{
+	color: #52C5FF;
+}
+/*content是聊天记录里专用！*/
+div.content{
+	background-color: rgba(245,245,245,0.83);
+	padding-top: 0;
+	padding-right: 0.5em;
+	padding-left: 0;
+	padding-bottom: 0.5em;
+}
+div.content > hr{
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #E7E7E7;
+}
+div.content > p{
+	line-height: 0.8em;
+}
