@@ -1,0 +1,71 @@
+/*
+Rules:
+
+*/
+/*-- Main Part --*/
+/*Titles*/
+h1 {
+    text-align: center;
+    margin-top: 1em;
+    margin-right: 5%;
+}
+/*Index*/
+.index{
+    float: none;
+    overflow-y: auto;
+    position: fixed;
+    right: 0;
+    top: -1px;
+    padding-top: 1em;
+    padding-right: 10px;
+    margin: 0;
+    border-right: none;
+    font-size: 0.9em;
+    height: 100% !important;
+    background-color: rgba(241, 241, 241, 1);
+    box-shadow: 1px 1px 4px #333;
+    width: 300px;
+}
+.index h2 {
+    text-align: center;
+}
+.index a {
+    text-decoration: none;
+    color: deepskyblue;
+    transition: text-shadow 300ms, font-size 300ms, font-weight 300ms;
+}
+.index a:hover {
+    text-shadow: 1px 1px 1px rgba(11, 11, 110, 0.7);
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+li::marker{
+    content: none;
+}
+/*正文*/
+.indent p {
+    text-indent: 4em;
+}
+/*-- Special Function --*/
+/*图片配文字格式*/
+.box_1img {
+    max-width: 400px;
+    margin: 2px 0px 0px 6em;
+}
+.box_2img {
+    max-width: 600px;
+    margin: 2px 0px 0px 6em;
+}
+.box-img p {
+    text-indent: 0;
+    text-align: center;
+}
+.box-text {
+    color: rgb(164, 164, 164);
+    text-align: center;
+    text-indent: 0 !important;
+}
+
+.box-img img {
+    max-width: 100%;
+}
