@@ -18,11 +18,11 @@
     <script type="text/javascript" src="resources/js/Script.js"></script>
     <link rel="icon" href="resources/img/common files/icon.png"/>
 </head>
-<body class="wrapper">
+<body class="wrapper" id="wrapper">
     <h1>Personal Blog Frame</h1>
-    <nav class = "index">
-        <h2>1999/02</h2>
-        <div class="toc">
+    <nav class = "index" id = "index">
+        <h2>1999/02 <span onclick="Side_Bar()" class="index_button" id="index_button">[Hide Index]</span></h2>
+        <div class="toc" id="toc">
             <ul>
                 <li><a href="#19990201">1999/02/01</a></li>
                 <li><a href="#19990202">1999/02/02</a></li>
@@ -51,6 +51,14 @@
                 <p class="box-text">Clover</p>
             </div>
         </div>
+        <p><br></p>
+        <div id="19990202">
+            <h3>1999/02/02 Day</h3>
+            <p>Today is a good day</p>
+            <p><hidding>This is a test</hidding></p>
+        </div>
+        <p><br></p>
+        <h5 id="19990203">1999/02/03 Day Short Test Here</h5>
     </div>
 </body>
 </html>

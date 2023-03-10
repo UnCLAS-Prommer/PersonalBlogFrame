@@ -5,7 +5,12 @@ html, body {
     color: #444444;
 }
 body.wrapper{
-    padding-right: 35%;
+    padding-right: 335px;
+    padding-left: 5%;
+    transition: padding-right 500ms;
+}
+body.wrapper_extend{
+    padding-right: 5%;
 }
 /*Titles*/
 h1 {
@@ -55,17 +60,36 @@ h5 {
     background-color: rgba(241, 241, 241, 0.6);
     box-shadow: 1px 1px 4px #333;
     width: 300px;
+    transition: width 500ms, height 500ms, padding-top 500ms;
+}
+.index_hidden{
+    padding-top: 0em;
+    width: 200px !important;
+    height: 80px !important;
+    padding-right: 0px;
+}
+.toc_hidden{
+    display: none;
+}
+.index_button{
+    text-decoration: none;
+    font-size: 0.7em;
+    float: right;
+    transition: color 300ms;
+}
+.index_button:hover{
+    color: dodgerblue;
 }
 .index h2 {
     text-align: center;
 }
-.index a {
+.toc a {
     text-decoration: none;
     color: rgb(0, 173, 230);
     transition: text-shadow 300ms, font-size 300ms, font-weight 300ms;
     font-weight: bold;
 }
-.index a:hover {
+.toc a:hover {
     text-shadow: 1px 1px 1px rgba(17, 17, 154, 0.7);
     font-weight: bolder;
     font-size: 1.4em;
@@ -73,11 +97,30 @@ h5 {
 li::marker{
     content: none;
 }
+.prenext{
+	position:fixed;
+	bottom:10px;
+}
 /*正文*/
 .indent p {
-    text-indent: 4em;
+    text-indent: 2em;
 }
 /*-- Special Function --*/
+
+div .command_screen{
+	margin: 0 0 0 2em;
+	padding: 0.1em 0em 0.2em 0em;
+}
+.command_screen summary{
+	font-weight: bold;
+	margin:0.7em;
+}
+.command_screen p{
+	color: #0DD424;
+	font-weight: bold;
+	margin:0.7em;
+}
+
 /*图片配文字格式*/
 .box_1img {
     max-width: 400px;
@@ -96,7 +139,37 @@ li::marker{
     text-align: center;
     text-indent: 0 !important;
 }
-
 .box-img img {
     max-width: 100%;
+}
+
+/*<hidding>的CSS*/
+hidding{
+	text-shadow: none;
+	color: #252525;
+	background-color: #252525;
+	transition: color 0.13s;
+	padding-right: 2px;
+	padding-left: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+hidding > ruby > rt{
+	text-shadow: none;
+	color: #252525;
+	background-color: #252525;
+	transition: color 0.13s;
+	padding: 0px;
+}
+hidding > ruby > rt:hover{
+	color: #F9F9F9;
+}
+hidding > a{
+	color: #252525;
+}
+hidding:hover{
+	color: #F9F9F9;
+}
+hidding > a:hover{
+	color: #52C5FF;
 }

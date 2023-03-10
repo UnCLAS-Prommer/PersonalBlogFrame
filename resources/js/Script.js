@@ -1,5 +1,6 @@
 // JavaScript Document
 /* exported Render Command_screen Chat Black_Curtains Select_File*/
+Sidebar = true;
 function Render(conparms){
 	var render = conparms[1].getElementsByTagName("p");//获取<p>标签的集合数组
 	var num_people = conparms[0];//获取人数
@@ -105,7 +106,21 @@ function Select_File(loc, parent_path, audio_id){
 	audio_id.getElementsByTagName("source")[0].src = file_path;
 	audio_id.load();
 }
-
+function Side_Bar(){
+	if(Sidebar){
+		document.getElementById("index").className = "index index_hidden";
+		document.getElementById("toc").className = "toc_hidden";
+		document.getElementById("wrapper").className = "wrapper wrapper_extend";
+		document.getElementById("index_button").innerHTML = "[Show Index]";
+	}
+	else{
+		document.getElementById("index").className = "index";
+		document.getElementById("index_button").innerHTML = "[Hide Index]";
+		document.getElementById("wrapper").className = "wrapper";
+		setTimeout(function(){document.getElementById("toc").className = "toc";},500)
+	}
+	Sidebar = !Sidebar;
+}
 /*
 Plans:
 1.完善Chat()，看看能不能加上头像，然后重新调整。
