@@ -1,18 +1,43 @@
-/*
-Rules:
-
-*/
 /*-- Body --*/
 html, body {
     background-color: #fff;
     font-size:16px;
     color: #444444;
 }
+body.wrapper{
+    padding-right: 35%;
+}
 /*Titles*/
 h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    margin-top: 0;
+	padding-top: 1em;
+    margin-bottom: 0.2em;
+    font-weight: bold;
     text-align: center;
-    margin-top: 1em;
-    margin-right: 5%;
+    color: #111111;
+}
+h2 {
+    font-size: 1.4em;
+    line-height: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: #111111;
+}
+h3 {
+    font-size: 1.4em;
+    color: #111111;
+}
+h4 {
+    font-size: 1.1em;
+    color: #111111;
+}
+h5 {
+    font-size: 0.9em;
+    font-weight: bold;
 }
 /*Index*/
 .index{
@@ -27,7 +52,7 @@ h1 {
     border-right: none;
     font-size: 0.9em;
     height: 100% !important;
-    background-color: rgba(241, 241, 241, 1);
+    background-color: rgba(241, 241, 241, 0.6);
     box-shadow: 1px 1px 4px #333;
     width: 300px;
 }
@@ -36,13 +61,14 @@ h1 {
 }
 .index a {
     text-decoration: none;
-    color: deepskyblue;
+    color: rgb(0, 173, 230);
     transition: text-shadow 300ms, font-size 300ms, font-weight 300ms;
+    font-weight: bold;
 }
 .index a:hover {
-    text-shadow: 1px 1px 1px rgba(11, 11, 110, 0.7);
+    text-shadow: 1px 1px 1px rgba(17, 17, 154, 0.7);
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 li::marker{
     content: none;
