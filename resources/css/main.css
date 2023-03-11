@@ -4,6 +4,13 @@ html, body {
     font-size:16px;
     color: #444444;
 }
+body{
+    background-attachment:fixed;
+	background-position: 0% 0%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-blend-mode:lighten;
+}
 body.wrapper{
     padding-right: 335px;
     padding-left: 5%;

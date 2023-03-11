@@ -1,6 +1,6 @@
 // JavaScript Document
 /* exported Render Command_screen Chat Black_Curtains Select_File*/
-Sidebar = true;
+var Sidebar = true;
 function Render(conparms){
 	var render = conparms[1].getElementsByTagName("p");//获取<p>标签的集合数组
 	var num_people = conparms[0];//获取人数
