@@ -58,7 +58,7 @@ h5 {
     font-size: 0.9em;
     height: 100% !important;
     background-color: rgba(241, 241, 241, 0.6);
-    box-shadow: 1px 1px 4px #333;
+    box-shadow: 1px 2px 4px #333;
     width: 300px;
     transition: width 500ms, height 500ms, padding-top 500ms;
 }
@@ -67,6 +67,10 @@ h5 {
     width: 200px !important;
     height: 80px !important;
     padding-right: 0px;
+}
+.index h2 {
+    text-align: center;
+    transition: margin-top 500ms;
 }
 .toc_hidden{
     display: none;
@@ -79,9 +83,6 @@ h5 {
 }
 .index_button:hover{
     color: dodgerblue;
-}
-.index h2 {
-    text-align: center;
 }
 .toc a {
     text-decoration: none;
@@ -134,16 +135,23 @@ div .command_screen{
     text-indent: 0;
     text-align: center;
 }
+.box-2img {
+    text-align: center;
+}
 .box-text {
     color: rgb(164, 164, 164);
     text-align: center;
     text-indent: 0 !important;
 }
-.box-img img {
+.box-img img, .box-2img img{
     max-width: 100%;
 }
+.box-2img p{
+    display: inline;
+    text-align: center;
+}
 
-/*<hidding>的CSS*/
+/*CSS of <hidding> tags*/
 hidding{
 	text-shadow: none;
 	color: #252525;
@@ -172,4 +180,10 @@ hidding:hover{
 }
 hidding > a:hover{
 	color: #52C5FF;
+}
+
+/*CSS of <note> tags*/
+note{
+	font-style: italic;
+	color: rgba(139,169,214,0.85);
 }
