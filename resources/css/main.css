@@ -102,12 +102,15 @@ h5 {
     font-weight: bolder;
     font-size: 1.4em;
 }
+.toc li{
+	margin: 4px 0px;
+}
 li::marker{
     content: none;
 }
 .prenext{
-	position:fixed;
-	bottom:10px;
+	position: fixed;
+	bottom: 20px;
 }
 /*正文*/
 .indent p {
@@ -158,6 +161,104 @@ div .command_screen{
     text-align: center;
 }
 
+/*Chat CSS*/
+div.conversation{
+	background-color: rgba(245,245,245,0.83);
+	padding-top: 0;
+	padding-right: 0.5em;
+	padding-left: 0;
+	padding-bottom: 0.5em;
+}
+div.conversation > hr{
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #E7E7E7;
+}
+hr.dot{
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    overflow: hidden;
+    border-style: dotted;
+    border-width: 2px;
+    border-color: rgba(231,231,231,0.9);
+}
+p.time{
+	font-size: 0.9em;
+	border-style: none;
+	border-width: 4px;
+	background-color: rgba(235,235,235,0.93);
+	color: #606060;
+	text-align: center;
+	margin: 0 42%;
+	text-indent: 0em!important;
+}
+span.chat_others_WeChat{
+	border-style: solid;
+	border-color: #EDEDED #EDEDED #EDEDED #CECECE;
+	border-width: 1px 1px 1px 4px;
+	border-radius: 4px;
+	padding:0.4em;
+	background-color:white;
+	line-height: 1.8em;
+}
+span.chat_myself_WeChat{
+	border-style: solid;
+	border-color: #EDEDED #5EC01B #EDEDED #EDEDED;
+	border-width: 1px 4px 1px 1px;
+	border-radius: 4px;
+	padding:0.4em;
+	background-color: #9EEA6A;
+	line-height: 1.8em;
+}
+span.chat_myself_WeChat_2{
+	border-style: solid;
+	border-color: #EDEDED #CECECE #EDEDED #EDEDED;
+	border-width: 1px 4px 1px 1px;
+	border-radius: 4px;
+	padding:0.4em;
+	background-color: white;
+	line-height: 1.8em;
+}
+span.chat_others_QQ{
+	border-style: solid;
+	border-color: #EDEDED #EDEDED #EDEDED #C2C2C2;
+	border-width: 1px 1px 1px 5px;
+	border-radius: 6px;
+	background-color: #E5E5E5;
+	color:black;
+	padding:0.4em 0.6em 0.4em 0.4em;
+	line-height: 1.8em;
+}
+span.chat_myself_QQ{
+	border-style: solid;
+	border-color: #EDEDED #09A1DA #EDEDED #EDEDED;
+	border-width: 1px 5px 1px 1px;
+	border-radius: 6px;
+	color:white;
+	padding:0.4em 0.4em 0.4em 0.6em;
+	background-color: #12B7F5;
+	line-height: 1.8em;
+}
+span.chat_myself_QQ_2{
+	border-style: solid;
+	border-color: #EDEDED #C2C2C2 #EDEDED #EDEDED;
+	border-width: 1px 5px 1px 1px;
+	border-radius: 6px;
+	color:black;
+	padding:0.4em 0.4em 0.4em 0.6em;
+	background-color: #E5E5E5;
+	line-height: 1.8em;
+}
+div.conversation > p{
+	line-height:normal;
+}
+
+/*CSS of New Tags */
 /*CSS of <hidding> tags*/
 hidding{
 	text-shadow: none;
@@ -193,4 +294,15 @@ hidding > a:hover{
 note{
 	font-style: italic;
 	color: rgba(139,169,214,0.85);
+}
+
+/*Serveral Colors*/
+.colorc1 {
+	color: #68718e;
+}
+.colorc2 {
+	color: #f8b662;
+}
+.colorco {
+	color: #d0ebf1;
 }
