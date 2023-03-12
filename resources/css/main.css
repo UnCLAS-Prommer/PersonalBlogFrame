@@ -1,30 +1,32 @@
 /*-- Body --*/
-html, body {
+html,
+body {
     background-color: #fff;
-    font-size:16px;
+    font-size: 16px;
     color: #444444;
 }
-body{
-    background-attachment:fixed;
-	background-position: 0% 0%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-blend-mode:lighten;
+body {
+    background-attachment: fixed;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
 }
-body.wrapper{
+body.wrapper {
     padding-right: 335px;
     padding-left: 5%;
     transition: padding-right 500ms;
 }
-body.wrapper_extend{
+body.wrapper_extend {
     padding-right: 5%;
 }
+
 /*Titles*/
 h1 {
     font-size: 2.5em;
     line-height: 1.2em;
     margin-top: 0;
-	padding-top: 1em;
+    padding-top: 1em;
     margin-bottom: 0.2em;
     font-weight: bold;
     text-align: center;
@@ -47,12 +49,14 @@ h4 {
     font-size: 1.1em;
     color: #111111;
 }
+
 h5 {
     font-size: 0.9em;
     font-weight: bold;
 }
+
 /*Index*/
-.index{
+.index {
     float: none;
     overflow-y: auto;
     position: fixed;
@@ -69,7 +73,7 @@ h5 {
     width: 300px;
     transition: width 500ms, height 500ms, padding-top 500ms;
 }
-.index_hidden{
+.index_hidden {
     padding-top: 0em;
     width: 200px !important;
     height: 80px !important;
@@ -79,16 +83,17 @@ h5 {
     text-align: center;
     transition: margin-top 500ms;
 }
-.toc_hidden{
+
+.toc_hidden {
     display: none;
 }
-.index_button{
+.index_button {
     text-decoration: none;
     font-size: 0.7em;
     float: right;
     transition: color 300ms;
 }
-.index_button:hover{
+.index_button:hover {
     color: dodgerblue;
 }
 .toc a {
@@ -102,74 +107,83 @@ h5 {
     font-weight: bolder;
     font-size: 1.4em;
 }
-.toc li{
-	margin: 4px 0px;
+.toc li {
+    margin: 4px 0px;
 }
-li::marker{
+li::marker {
     content: none;
 }
-.prenext{
-	position: fixed;
-	bottom: 20px;
+
+.prenext {
+    position: fixed;
+    bottom: 20px;
 }
+
 /*正文*/
 .indent p {
     text-indent: 2em;
 }
+
 /*-- Special Function --*/
-
-div .command_screen{
-	margin: 0 0 0 2em;
-	padding: 0.1em 0em 0.2em 0em;
+div .command_screen {
+    margin: 0 0 0 2em;
+    padding: 0.1em 0em 0.2em 0em;
 }
-.command_screen summary{
-	font-weight: bold;
-	margin:0.7em;
+.command_screen summary {
+    font-weight: bold;
+    margin: 0.7em;
 }
-.command_screen p{
-	color: #0DD424;
-	font-weight: bold;
-	margin:0.7em;
+.command_screen p {
+    color: #0DD424;
+    font-weight: bold;
+    margin: 0.7em;
 }
-
 /*图片配文字格式*/
 .box_1img {
     max-width: 400px;
     margin: 2px 0px 0px 6em;
 }
+
 .box_2img {
     max-width: 600px;
     margin: 2px 0px 0px 6em;
 }
+
 .box-img p {
     text-indent: 0;
     text-align: center;
 }
+
 .box-2img {
     text-align: center;
 }
+
 .box-text {
     color: rgb(164, 164, 164);
     text-align: center;
     text-indent: 0 !important;
 }
-.box-img img, .box-2img img{
+
+.box-img img,
+.box-2img img {
     max-width: 100%;
 }
-.box-2img p{
+
+.box-2img p {
     display: inline;
     text-align: center;
 }
 
 /*Chat CSS*/
-div.conversation{
-	background-color: rgba(245,245,245,0.83);
-	padding-top: 0;
-	padding-right: 0.5em;
-	padding-left: 0;
-	padding-bottom: 0.5em;
+div.conversation {
+    background-color: rgba(245, 245, 245, 0.83);
+    padding-top: 0;
+    padding-right: 0.5em;
+    padding-left: 0;
+    padding-bottom: 0.5em;
 }
-div.conversation > hr{
+
+div.conversation>hr {
     display: block;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
@@ -178,131 +192,147 @@ div.conversation > hr{
     border-width: 2px;
     border-color: #E7E7E7;
 }
-hr.dot{
+
+hr.dot {
     display: block;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
     overflow: hidden;
     border-style: dotted;
     border-width: 2px;
-    border-color: rgba(231,231,231,0.9);
+    border-color: rgba(231, 231, 231, 0.9);
 }
-p.time{
-	font-size: 0.9em;
-	border-style: none;
-	border-width: 4px;
-	background-color: rgba(235,235,235,0.93);
-	color: #606060;
-	text-align: center;
-	margin: 0 42%;
-	text-indent: 0em!important;
+
+p.time {
+    font-size: 0.9em;
+    border-style: none;
+    border-width: 4px;
+    background-color: rgba(235, 235, 235, 0.93);
+    color: #606060;
+    text-align: center;
+    margin: 0 42%;
+    text-indent: 0em !important;
 }
-span.chat_others_WeChat{
-	border-style: solid;
-	border-color: #EDEDED #EDEDED #EDEDED #CECECE;
-	border-width: 1px 1px 1px 4px;
-	border-radius: 4px;
-	padding:0.4em;
-	background-color:white;
-	line-height: 1.8em;
+
+span.chat_others_WeChat {
+    border-style: solid;
+    border-color: #EDEDED #EDEDED #EDEDED #CECECE;
+    border-width: 1px 1px 1px 4px;
+    border-radius: 4px;
+    padding: 0.4em;
+    background-color: white;
+    line-height: 1.8em;
 }
-span.chat_myself_WeChat{
-	border-style: solid;
-	border-color: #EDEDED #5EC01B #EDEDED #EDEDED;
-	border-width: 1px 4px 1px 1px;
-	border-radius: 4px;
-	padding:0.4em;
-	background-color: #9EEA6A;
-	line-height: 1.8em;
+
+span.chat_myself_WeChat {
+    border-style: solid;
+    border-color: #EDEDED #5EC01B #EDEDED #EDEDED;
+    border-width: 1px 4px 1px 1px;
+    border-radius: 4px;
+    padding: 0.4em;
+    background-color: #9EEA6A;
+    line-height: 1.8em;
 }
-span.chat_myself_WeChat_2{
-	border-style: solid;
-	border-color: #EDEDED #CECECE #EDEDED #EDEDED;
-	border-width: 1px 4px 1px 1px;
-	border-radius: 4px;
-	padding:0.4em;
-	background-color: white;
-	line-height: 1.8em;
+
+span.chat_myself_WeChat_2 {
+    border-style: solid;
+    border-color: #EDEDED #CECECE #EDEDED #EDEDED;
+    border-width: 1px 4px 1px 1px;
+    border-radius: 4px;
+    padding: 0.4em;
+    background-color: white;
+    line-height: 1.8em;
 }
-span.chat_others_QQ{
-	border-style: solid;
-	border-color: #EDEDED #EDEDED #EDEDED #C2C2C2;
-	border-width: 1px 1px 1px 5px;
-	border-radius: 6px;
-	background-color: #E5E5E5;
-	color:black;
-	padding:0.4em 0.6em 0.4em 0.4em;
-	line-height: 1.8em;
+
+span.chat_others_QQ {
+    border-style: solid;
+    border-color: #EDEDED #EDEDED #EDEDED #C2C2C2;
+    border-width: 1px 1px 1px 5px;
+    border-radius: 6px;
+    background-color: #E5E5E5;
+    color: black;
+    padding: 0.4em 0.6em 0.4em 0.4em;
+    line-height: 1.8em;
 }
-span.chat_myself_QQ{
-	border-style: solid;
-	border-color: #EDEDED #09A1DA #EDEDED #EDEDED;
-	border-width: 1px 5px 1px 1px;
-	border-radius: 6px;
-	color:white;
-	padding:0.4em 0.4em 0.4em 0.6em;
-	background-color: #12B7F5;
-	line-height: 1.8em;
+
+span.chat_myself_QQ {
+    border-style: solid;
+    border-color: #EDEDED #09A1DA #EDEDED #EDEDED;
+    border-width: 1px 5px 1px 1px;
+    border-radius: 6px;
+    color: white;
+    padding: 0.4em 0.4em 0.4em 0.6em;
+    background-color: #12B7F5;
+    line-height: 1.8em;
 }
-span.chat_myself_QQ_2{
-	border-style: solid;
-	border-color: #EDEDED #C2C2C2 #EDEDED #EDEDED;
-	border-width: 1px 5px 1px 1px;
-	border-radius: 6px;
-	color:black;
-	padding:0.4em 0.4em 0.4em 0.6em;
-	background-color: #E5E5E5;
-	line-height: 1.8em;
+
+span.chat_myself_QQ_2 {
+    border-style: solid;
+    border-color: #EDEDED #C2C2C2 #EDEDED #EDEDED;
+    border-width: 1px 5px 1px 1px;
+    border-radius: 6px;
+    color: black;
+    padding: 0.4em 0.4em 0.4em 0.6em;
+    background-color: #E5E5E5;
+    line-height: 1.8em;
 }
-div.conversation > p{
-	line-height:normal;
+
+div.conversation>p {
+    line-height: normal;
 }
 
 /*CSS of New Tags */
 /*CSS of <hidding> tags*/
-hidding{
-	text-shadow: none;
-	color: #252525;
-	background-color: #252525;
-	transition: color 0.13s;
-	padding-right: 2px;
-	padding-left: 2px;
-	margin-left: 2px;
-	margin-right: 2px;
+hidding {
+    text-shadow: none;
+    color: #252525;
+    background-color: #252525;
+    transition: color 0.13s;
+    padding-right: 2px;
+    padding-left: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
-hidding > ruby > rt{
-	text-shadow: none;
-	color: #252525;
-	background-color: #252525;
-	transition: color 0.13s;
-	padding: 0px;
+
+hidding>ruby>rt {
+    text-shadow: none;
+    color: #252525;
+    background-color: #252525;
+    transition: color 0.13s;
+    padding: 0px;
 }
-hidding > ruby > rt:hover{
-	color: #F9F9F9;
+
+hidding>ruby>rt:hover {
+    color: #F9F9F9;
 }
-hidding > a{
-	color: #252525;
+
+hidding>a {
+    color: #252525;
 }
-hidding:hover{
-	color: #F9F9F9;
+
+hidding:hover {
+    color: #F9F9F9;
 }
-hidding > a:hover{
-	color: #52C5FF;
+
+hidding>a:hover {
+    color: #52C5FF;
 }
 
 /*CSS of <note> tags*/
-note{
-	font-style: italic;
-	color: rgba(139,169,214,0.85);
+note {
+    font-style: italic;
+    color: rgba(139, 169, 214, 0.85);
 }
 
 /*Serveral Colors*/
 .colorc1 {
-	color: #68718e;
+    color: #68718e;
 }
+
 .colorc2 {
-	color: #f8b662;
+    color: #f8b662;
 }
+
 .colorco {
-	color: #d0ebf1;
+    color: #d0ebf1;
 }
