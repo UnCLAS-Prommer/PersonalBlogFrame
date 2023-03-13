@@ -47,9 +47,9 @@ h3 {
 h4 {
     font-size: 1.1em;
     color: #111111;
-    padding-left: 8px;
+    /* padding-left: 8px;
     padding-top: 10px;
-    margin-bottom: 3px;
+    margin-bottom: 3px; */
 }
 h5 {
     font-size: 0.9em;
@@ -168,9 +168,9 @@ div .command_screen{
 /*Chat CSS*/
 div.conversation{
     background-color: rgba(245,245,245,0.83);
-    padding-top: 0;
+    padding-top: 0.5em;
     padding-right: 0.5em;
-    padding-left: 0;
+    padding-left: 0.5em;
     padding-bottom: 0.5em;
 }
 div.conversation > hr{
@@ -181,6 +181,9 @@ div.conversation > hr{
     border-style: solid;
     border-width: 2px;
     border-color: #E7E7E7;
+}
+div.conversation h4{
+    margin: 0 !important;
 }
 hr.dot{
     display: block;
@@ -292,6 +295,38 @@ hidding:hover{
 }
 hidding > a:hover{
     color: #52C5FF;
+}
+
+div.con_container_l{
+	display: flex;
+	width: 500px;
+    padding: 5px 3px;
+    text-align: left;
+}
+div.con_container_r{
+	display: flex;
+	width: 500px;
+    padding: 5px 3px;
+    text-align: right;
+}
+.con_name{
+	flex-grow: 0.5;
+	padding-right: 5px;
+	text-indent: 0 !important;
+}
+.con_content_l{
+	flex-grow: 9.5;
+	border-style: solid;
+    border-color: grey;
+	border-radius: 4px;
+    border-width: 1px 1px 1px 4px;
+	background-color: #fff;
+	text-indent: 0 !important;
+    padding: 0.4em;
+}
+.con_container_l p {
+	text-indent: 0 !important;
+    margin: 0;
 }
 
 /*CSS of <note> tags*/
