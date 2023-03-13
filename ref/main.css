@@ -603,3 +603,20 @@ div.content > hr{
 div.content > p{
 	line-height: 0.8em;
 }
+
+div.con_container{
+	display: flex;
+	width: 500px;
+}
+.con_name{
+	flex-grow: 0.5;
+	padding-right: 5px;
+	text-indent: 0 !important;
+}
+.con_content{
+	flex-grow: 9.5;
+	border: solid grey 4px;
+	border-radius: 2px;
+	background-color: #fff;
+	text-indent: 0 !important;
+}
