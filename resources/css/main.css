@@ -172,6 +172,7 @@ div.conversation{
     padding-right: 0.5em;
     padding-left: 0.5em;
     padding-bottom: 0.5em;
+    margin: 10px 0px;
 }
 div.conversation > hr{
     display: block;

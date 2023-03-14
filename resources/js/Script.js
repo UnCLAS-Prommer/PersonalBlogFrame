@@ -147,54 +147,58 @@ function Chat_new(myself,others,location,format,subjects){
         container.appendChild(name);
         return container;
     }
-    function Render_QQ(line){
-        var container = document.createElement("div");
-        var name = document.createElement("p");
-        var content = document.createElement("p");
-        var box;
-        if(line.slice(0,olength) == others){
-            box = Chat_Others(container, name, content, line);
+    function Render_QQ(box, target){
+        if(target == "others"){
             box.children[1].className += " chat_others_QQ";
-            location.appendChild(box)
         }
-        if(line.slice(0,mlength) == myself){
-            box = Chat_Myself(container, name, content, line);
+        if(target == "myself"){
             if(subjects == "others"){
                 box.children[0].className += " chat_myself_QQ_2";
             }
             else{
                 box.children[0].className +=  " chat_myself_QQ";
             }
-            location.appendChild(box);
         }
+        location.appendChild(box);
     }
-    function Render_WeChat(line){
-        var container = document.createElement("div");
-        var name = document.createElement("p");
-        var content = document.createElement("p");
-        var box;
-        if(line.slice(0,olength) == others){
-            box = Chat_Others(container, name, content, line);
+    function Render_WeChat(box, target){
+        if(target == "others"){
             box.children[1].className += " chat_others_WeChat";
-            location.appendChild(box)
         }
-        if(line.slice(0,mlength) == myself){
-            box = Chat_Myself(container, name, content, line);
+        if(target == "myself"){
             if(subjects == "others"){
                 box.children[0].className += " chat_myself_WeChat_2";
             }
             else{
                 box.children[0].className +=  " chat_myself_WeChat";
             }
-            location.appendChild(box);
         }
+        location.appendChild(box);
     }
     for(i = 0; i < chat_num; i++){
-        if(format == "QQ"){
-            Render_QQ(chat_list[i].innerHTML);
+        var container = document.createElement("div");
+        var name = document.createElement("p");
+        var content = document.createElement("p");
+        var line = chat_list[i].innerHTML;
+        var target = "time";
+        if(line.slice(0,olength) == others){
+            box = Chat_Others(container, name, content, line);
+            target = "others";
         }
-        if(format == "WeChat"){
-            Render_WeChat(chat_list[i].innerHTML);
+        if(line.slice(0,mlength) == myself){
+            box = Chat_Myself(container, name, content, line);
+            target = "myself";
+        }
+        if(format == "QQ" && target != "time"){
+            Render_QQ(box, target);
+        }
+        if(format == "WeChat" && target != "time"){
+            Render_WeChat(box, target);
+        }
+        if(target == "time"){
+            content.innerHTML = line;
+            content.className = "time";
+            location.appendChild(content);
         }
     }
     var divclear = document.createElement("div");
