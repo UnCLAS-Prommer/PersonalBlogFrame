@@ -195,6 +195,7 @@ p.time{
     text-align: center;
     margin: 0 42%;
     text-indent: 0em!important;
+    clear: both;
 }
 .chat_others_WeChat{
     border-color: #EDEDED #EDEDED #EDEDED #CECECE;
@@ -226,9 +227,12 @@ p.time{
 
 div.con_container_l, div.con_container_r{
 	display: flex;
-	width: 500px;
     padding: 5px 3px;
+	max-width: 600px;
     clear: both;
+}
+div.con_container_l{
+	float: left;
 }
 div.con_container_r{
     float: right;
@@ -272,6 +276,12 @@ div.con_container_r{
 chat{
     display: none;
 }
+
+/*Inner chat*/
+div.innerconversation{
+    background-color: rgba(245, 245, 245, 0.897);;
+}
+
 /*CSS of New Tags */
 /*CSS of <hidding> tags*/
 hidding{
@@ -319,4 +329,8 @@ note{
 }
 .colorco {
     color: #d0ebf1;
+}
+.colorbrightred{
+	color: #CD3A3C;
+	text-shadow: 1px 1px 2px #9A282A;
 }
