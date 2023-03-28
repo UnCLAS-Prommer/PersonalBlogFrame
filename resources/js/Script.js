@@ -64,9 +64,8 @@ function Side_Bar(){
     }
     Sidebar = !Sidebar;
 }
-
 //这一块是为了实现类似微信聊天那样的左右以及框功能的。构想是人名后加冒号，通过innerHTML加上<span>代码块，分离代码计算，生成效果。效果见聊天
-function Chat_new(myself,others,location,format,subjects){
+function Chat_new(myself,others,location,format,subjects,is_inner){
     var chat_list = location.getElementsByTagName("chat"); // Get List
     var chat_num = chat_list.length;
     var mlength = myself.length;
@@ -119,24 +118,29 @@ function Chat_new(myself,others,location,format,subjects){
         }
         location.appendChild(box);
     }
-    for(i = 0; i < chat_num; i++){
+    for(var i = 0; i < chat_num; i++){
         var container = document.createElement("div");
         var name = document.createElement("p");
         var content = document.createElement("p");
         var line = chat_list[i].innerHTML;
         var target = "time";
-        if(line.slice(0,olength) == others){
+		if(chat_list[i].parentElement.className.search("innerconversation") != -1){
+			if(!is_inner){
+				target = "NoRender";
+			}
+		}
+        if(line.slice(0,olength) == others && target != "NoRender"){
             box = Chat_Others(container, name, content, line);
             target = "others";
         }
-        if(line.slice(0,mlength) == myself){
+        if(line.slice(0,mlength) == myself && target != "NoRender"){
             box = Chat_Myself(container, name, content, line);
             target = "myself";
         }
-        if(format == "QQ" && target != "time"){
+        if(format == "QQ" && target != "time" && target != "NoRender"){
             Render_QQ(box, target);
         }
-        if(format == "WeChat" && target != "time"){
+        if(format == "WeChat" && target != "time" && target != "NoRender"){
             Render_WeChat(box, target);
         }
         if(target == "time"){
@@ -149,10 +153,6 @@ function Chat_new(myself,others,location,format,subjects){
     divclear.className = "clear";
     location.appendChild(divclear);
 }
-/*
-Plans:
-1.完善Chat()，看看能不能加上头像，然后重新调整。
-*/
 /*大量注释说明:
 1.window.onload用法:
     window.onload = function(){目标函数};

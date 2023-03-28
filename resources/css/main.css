@@ -11,6 +11,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode:lighten;
+	padding-bottom: 10px
 }
 div.wrapper{
     padding-right: 335px;
@@ -195,7 +196,7 @@ p.time{
     text-align: center;
     margin: 0 42%;
     text-indent: 0em!important;
-    clear: both;
+	clear: both;
 }
 .chat_others_WeChat{
     border-color: #EDEDED #EDEDED #EDEDED #CECECE;
@@ -279,9 +280,12 @@ chat{
 
 /*Inner chat*/
 div.innerconversation{
-    background-color: rgba(245, 245, 245, 0.897);;
+    background-color: rgba(245, 245, 245, 0.897);
+	min-width: 500px;
 }
-
+.innerconversation p.time{
+	background-color: rgba(245, 245, 245, 0.897);
+}
 /*CSS of New Tags */
 /*CSS of <hidding> tags*/
 hidding{
@@ -317,7 +321,7 @@ hidding > a:hover{
 /*CSS of <note> tags*/
 note{
     font-style: italic;
-    color: rgba(139,169,214,0.85);
+    color: rgba(94,136,198,0.85);
 }
 
 /*Serveral Colors*/
