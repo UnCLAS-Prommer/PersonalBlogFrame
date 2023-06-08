@@ -42,6 +42,20 @@ function Black_Curtains(){
         }
     }
 }
+document.onkeypress = function(e){background(e)}
+//背景相关
+function background(key){
+    if(key.keyCode == 13){
+        if(!Visible){
+            document.getElementById("wrapper").style.opacity = 0;
+            Visible = true;
+        }
+        else{
+            document.getElementById("wrapper").style.opacity = 100;
+            Visible = false;
+        }
+    }
+}
 function Select_File(loc, parent_path, audio_id){
     audio_id.volume = 0.08;
     var values = loc.value;
@@ -153,7 +167,7 @@ function Chat_new(myself,others,location,format,subjects,is_inner){
     divclear.className = "clear";
     location.appendChild(divclear);
 }
-/*大量注释说明:
+/*注释说明:
 1.window.onload用法:
     window.onload = function(){目标函数};
     若直接使用:
@@ -162,5 +176,5 @@ function Chat_new(myself,others,location,format,subjects,is_inner){
 2.记得分清楚 null 与 "" 之间的不同
 3.window.onload无法自动播放音视频。现无解决方案。
 4.bug不要改
-5.Chat示例：Chat("：我","张：",$20230121redpacket01,"QQ","myself")
+5.Chat示例：Chat_new("我","张",$20230121redpacket01,"QQ","myself")
 */

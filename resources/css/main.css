@@ -4,22 +4,26 @@ html, body {
     font-size:16px;
     color: #444444;
     margin: 0;
+    scroll-behavior: smooth;
 }
 body{
     background-attachment:fixed;
     background-position: 0% 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode:lighten;
-	padding-bottom: 10px
+	padding-bottom: 30px;
+    padding-top: 50px;
 }
 div.wrapper{
-    padding-right: 335px;
-    padding-left: 5%;
-    transition: padding-right 500ms;
+    margin-right: 335px;
+    margin-left: 80px;
+    border: medium grey solid;
+    border-radius: 20px;
+    padding-left: 30px;
+    transition: margin-right 500ms, opacity 700ms;
 }
 div.wrapper_extend{
-    padding-right: 5%;
+    margin-right: 5%;
 }
 /*Titles*/
 h1 {
@@ -69,7 +73,7 @@ h5 {
     border-right: none;
     font-size: 0.9em;
     height: 100% !important;
-    background-color: rgba(241, 241, 241, 0.6);
+    background-color: rgba(241, 241, 241, 0.8);
     box-shadow: 1px 2px 4px #333;
     width: 300px;
     transition: width 500ms, height 500ms, padding-top 500ms;
@@ -79,6 +83,7 @@ h5 {
     width: 200px !important;
     height: 80px !important;
     padding-right: 0px;
+    border-bottom-left-radius: 10px;
 }
 .index h2 {
     text-align: center;
@@ -116,6 +121,22 @@ li::marker{
 .prenext{
     position: fixed;
     bottom: 20px;
+}
+.index_para{
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    z-index: -1;
+    opacity: 60%;
+}
+/*Live 2D*/
+.l2d-container{
+    position: fixed;
+    left: 10px;
+    bottom: 20px;
+}
+.l2d-container img{
+    max-width: 150px;
 }
 /*正文*/
 .indent p {
