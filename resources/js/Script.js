@@ -1,6 +1,7 @@
 // JavaScript Document
 /* exported Render Command_screen Chat Black_Curtains Select_File*/
 var Sidebar = true;
+var Visable = false;
 function Render(conparms){
     var render = conparms[1].getElementsByTagName("p");//获取<p>标签的集合数组
     var num_people = conparms[0];//获取人数
@@ -42,19 +43,23 @@ function Black_Curtains(){
         }
     }
 }
-document.onkeypress = function(e){background(e)}
 //背景相关
-function background(key){
-    if(key.keyCode == 13){
-        if(!Visible){
-            document.getElementById("wrapper").style.opacity = 0;
-            Visible = true;
-        }
-        else{
-            document.getElementById("wrapper").style.opacity = 100;
-            Visible = false;
-        }
+function background(){
+    if(!Visable){
+		document.getElementById("wrapper").style.left = "-100%";
+        document.getElementById("index").className = "index index_hidden2";
+        document.getElementById("toc").className = "toc_hidden";
+        document.getElementById("index_button").style.display = "none";
     }
+    else{
+        document.getElementById("wrapper").style.left = "0%";
+        document.getElementById("index").className = "index full_height";
+        setTimeout(()=>{
+            document.getElementById("index_button").style.display = "block";
+            document.getElementById("toc").className = "toc";
+        },500);
+    }
+    Visable = !Visable;
 }
 function Select_File(loc, parent_path, audio_id){
     audio_id.volume = 0.08;
@@ -71,7 +76,7 @@ function Side_Bar(){
         document.getElementById("index_button").innerHTML = "[Show Index]";
     }
     else{
-        document.getElementById("index").className = "index";
+        document.getElementById("index").className = "index full_height";
         document.getElementById("index_button").innerHTML = "[Hide Index]";
         document.getElementById("wrapper").className = "wrapper";
         setTimeout(function(){document.getElementById("toc").className = "toc";},500);

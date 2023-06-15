@@ -7,23 +7,26 @@ html, body {
     scroll-behavior: smooth;
 }
 body{
-    background-attachment:fixed;
+    background-attachment: fixed;
     background-position: 0% 0%;
     background-repeat: no-repeat;
-    background-size: cover;
+    /*background-size: cover;*/
+    background-size: 100%;
 	padding-bottom: 30px;
     padding-top: 50px;
 }
 div.wrapper{
+    position: relative;
     margin-right: 335px;
     margin-left: 80px;
     border: medium grey solid;
     border-radius: 20px;
     padding-left: 30px;
-    transition: margin-right 500ms, opacity 700ms;
+    left: 0;
+    transition: margin-right 500ms, opacity 700ms, left 400ms ease;
 }
 div.wrapper_extend{
-    margin-right: 5%;
+    margin-right: 80px;
 }
 /*Titles*/
 h1 {
@@ -72,11 +75,13 @@ h5 {
     margin: 0;
     border-right: none;
     font-size: 0.9em;
-    height: 100% !important;
     background-color: rgba(241, 241, 241, 0.8);
     box-shadow: 1px 2px 4px #333;
     width: 300px;
     transition: width 500ms, height 500ms, padding-top 500ms;
+}
+.full_height{
+    height: 100%!important;
 }
 .index_hidden{
     padding-top: 0em;
@@ -85,9 +90,20 @@ h5 {
     padding-right: 0px;
     border-bottom-left-radius: 10px;
 }
+.index_hidden2{
+    padding-top: 0em;
+    height: 50px !important;
+    width: 90px !important;
+    padding-right: 0px;
+    border-bottom-left-radius: 10px;
+}
+.index_hidden2 h2{
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+}
 .index h2 {
     text-align: center;
-    transition: margin-top 500ms;
+    transition: margin 500ms;
 }
 .toc_hidden{
     display: none;
@@ -99,6 +115,12 @@ h5 {
     transition: color 300ms;
 }
 .index_button:hover{
+    color: dodgerblue;
+}
+.index_time_button{
+    transition: color 300ms;
+}
+.index_time_button:hover{
     color: dodgerblue;
 }
 .toc a {
@@ -139,6 +161,9 @@ li::marker{
     max-width: 150px;
 }
 /*正文*/
+div.indent{
+    transform: none;
+}
 .indent p {
     text-indent: 2em;
 }

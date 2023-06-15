@@ -6,7 +6,9 @@
     <style>
         @import url("resources/css/main.css");
         body{
-            background-image: none;
+            background-image: url("resources/img/background");
+        }
+        div.wrapper{
             background-color: rgba(255,255,255,0.6);
         }
     </style>
@@ -17,8 +19,8 @@
 <body>
 <div class="wrapper" id="wrapper">
     <h1>Personal Blog Frame</h1>
-    <nav class = "index" id = "index">
-        <h2>1999/02 <span onclick="Side_Bar()" class="index_button" id="index_button">[Hide Index]</span></h2>
+    <nav class = "index full_height" id = "index">
+        <h2><span onclick="background()" class="index_time_button">1999/02</span> <span onclick="Side_Bar()" class="index_button" id="index_button">[Hide Index]</span></h2>
         <div class="toc" id="toc">
             <ul>
                 <li><a href="#19990201">1999/02/01</a></li>
@@ -37,7 +39,7 @@
     </nav>
     <p><strong>About This</strong></p>
     <p>This is a Frame</p>
-    <div class="indent">
+    <div class="indent" id="main">
         <div id="19990201">
             <h3>1999/02/01 Day</h3>
             <p>Long Sentences Like This One: The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript. Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for its appearance.HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes, and other items. </p>
