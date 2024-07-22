@@ -10,9 +10,8 @@ body{
     background-attachment: fixed;
     background-position: 0% 0%;
     background-repeat: no-repeat;
-    /*background-size: cover;*/
-    background-size: 100%;
-	padding-bottom: 30px;
+	background-size: cover;
+    padding-bottom: 30px;
     padding-top: 50px;
 }
 div.wrapper{
@@ -66,11 +65,11 @@ h5 {
 /*Index*/
 .index{
     float: none;
-    overflow-y: auto;
+/*    overflow-y: auto;*/
     position: fixed;
     right: 0;
     top: -1px;
-    padding-top: 1em;
+/*    padding-top: 1em;*/
     padding-right: 10px;
     margin: 0;
     border-right: none;
@@ -81,7 +80,7 @@ h5 {
     transition: width 500ms, height 500ms, padding-top 500ms;
 }
 .full_height{
-    height: 100%!important;
+    height: 100% !important;
 }
 .index_hidden{
     padding-top: 0em;
@@ -113,15 +112,26 @@ h5 {
     font-size: 0.7em;
     float: right;
     transition: color 300ms;
+	cursor: pointer;
 }
 .index_button:hover{
     color: dodgerblue;
 }
 .index_time_button{
+	cursor: pointer;
     transition: color 300ms;
 }
 .index_time_button:hover{
     color: dodgerblue;
+}
+.toc ul {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: calc(100vh - 5em - 40px);
+}
+.toc > ul > li{
+	flex: none;
 }
 .toc a {
     text-decoration: none;
@@ -143,11 +153,24 @@ li::marker{
 .prenext{
     position: fixed;
     bottom: 20px;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 300px;
+}
+.previous{
+	text-align: center;
+	flex: 1;
+}
+.next{
+	text-align: center;
+	flex: 1;
 }
 .index_para{
     position: fixed;
-    top: 50px;
-    right: 10px;
+    bottom: 50px;
+    right: 20px;
     z-index: -1;
     opacity: 60%;
 }
@@ -155,17 +178,17 @@ li::marker{
 .l2d-container{
     position: fixed;
     left: 10px;
-    bottom: 20px;
+    bottom: 40px;
 }
 .l2d-container img{
     max-width: 150px;
 }
 /*正文*/
-div.indent{
-    transform: none;
-}
 .indent p {
     text-indent: 2em;
+}
+p.inline_img img {
+	max-width: 40%;
 }
 /*-- Special Function --*/
 
@@ -175,14 +198,20 @@ div .command_screen{
 }
 .command_screen summary{
     font-weight: bold;
-    margin:0.7em;
+    margin: 0.7em;
 }
 .command_screen p{
     color: #0DD424;
     font-weight: bold;
-    margin:0.7em;
+    margin: 0.7em;
 }
-
+p a{
+	text-decoration-line: none;
+	color: #3366cc;
+}
+p a:hover{
+	text-decoration-line: underline;
+}
 /*图片配文字格式*/
 .box_1img {
     max-width: 400px;
@@ -196,7 +225,7 @@ div .command_screen{
     text-indent: 0;
     text-align: center;
 }
-.box-2img {
+.box-2img{
     text-align: center;
 }
 .box-text {
@@ -204,14 +233,21 @@ div .command_screen{
     text-align: center;
     text-indent: 0 !important;
 }
-.box-img img, .box-2img img{
+.box-img img {
     max-width: 100%;
+	max-height: 300px;
+}
+.box-2img img {
+	max-width: 49%;
 }
 .box-2img p{
     display: inline;
     text-align: center;
 }
-
+video{
+	max-width: 500px;
+	margin-left: 2em;
+}
 /*Chat CSS*/
 div.conversation{
     background-color: rgba(245,245,245,0.83);
@@ -241,7 +277,7 @@ p.time{
     color: #606060;
     text-align: center;
     margin: 0 42%;
-    text-indent: 0em!important;
+    text-indent: 0em !important;
 	clear: both;
 }
 .chat_others_WeChat{
@@ -315,6 +351,11 @@ div.con_container_r{
 	text-indent: 0 !important;
     margin: 0;
 }
+.con_container_l img,.con_container_r img {
+	vertical-align: top;
+	max-width: 40%;
+	max-height: 300px;
+}
 
 .clear{
     clear: both;
@@ -364,12 +405,11 @@ hidding > a:hover{
     color: #52C5FF;
 }
 
-/*CSS of <note> tags*/
+/*CSS of Special Self tags*/
 note{
     font-style: italic;
     color: rgba(94,136,198,0.85);
 }
-
 /*Serveral Colors*/
 .colorc1 {
     color: #68718e;
@@ -383,4 +423,15 @@ note{
 .colorbrightred{
 	color: #CD3A3C;
 	text-shadow: 1px 1px 2px #9A282A;
+}
+
+/*Special Characters*/
+@font-face {
+	font-family: 'Special';
+	src: url("../fonts/Spcial_Character.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+.special_character{
+	font-family: 'Special';
 }
