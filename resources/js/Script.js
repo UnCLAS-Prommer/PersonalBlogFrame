@@ -1,7 +1,7 @@
 // JavaScript Document
 /* exported Render Command_screen Chat Black_Curtains Select_File*/
 var Sidebar = true;
-var Visable = false;
+var Visible = false;
 function Render(conparms){
     var render = conparms[1].getElementsByTagName("p");//获取<p>标签的集合数组
     var num_people = conparms[0];//获取人数
@@ -34,6 +34,7 @@ function Command_screen(){
         }
     }
 }
+//初始时必调用，不再修改命名。
 function Black_Curtains(){
     var cur_list = document.getElementsByTagName("hidding");//获取
     var cur_leng = cur_list.length;//长度，循环用
@@ -45,7 +46,7 @@ function Black_Curtains(){
 }
 //背景相关
 function background(){
-    if(!Visable){
+    if(!Visible){
 		document.getElementById("wrapper").style.left = "-100%";
         document.getElementById("index").className = "index index_hidden2";
         document.getElementById("toc").className = "toc_hidden";
@@ -59,7 +60,7 @@ function background(){
             document.getElementById("toc").className = "toc";
         },500);
     }
-    Visable = !Visable;
+    Visible = !Visible;
 }
 function Select_File(loc, parent_path, audio_id){
     audio_id.volume = 0.08;
@@ -68,6 +69,7 @@ function Select_File(loc, parent_path, audio_id){
     audio_id.getElementsByTagName("source")[0].src = file_path;
     audio_id.load();
 }
+//侧栏收缩效果实现
 function Side_Bar(){
     if(Sidebar){
         document.getElementById("index").className = "index index_hidden";
