@@ -21,14 +21,15 @@ div.wrapper{
     border: medium grey solid;
     border-radius: 20px;
     padding-left: 30px;
-    padding-right: 10px;
+	padding-right: 10px;
     left: 0;
     transition: margin-right 500ms, opacity 700ms, left 400ms ease;
 }
 div.wrapper_extend{
     margin-right: 80px;
 }
-/*Titles*/
+
+/*-- Titles --*/
 h1 {
     font-size: 2.5em;
     line-height: 1.2em;
@@ -63,7 +64,8 @@ h5 {
     font-size: 0.9em;
     font-weight: bold;
 }
-/*Index*/
+
+/*-- Index --*/
 .index{
     float: none;
 /*    overflow-y: auto;*/
@@ -108,6 +110,8 @@ h5 {
 .toc_hidden{
     display: none;
 }
+/*- Index Content -*/
+/* Index Buttons */
 .index_button{
     text-decoration: none;
     font-size: 0.7em;
@@ -129,10 +133,11 @@ h5 {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	height: calc(100vh - 5em - 40px);
+	height: calc(100vh - 120px);
 }
-.toc > ul > li{
-	flex: none;
+.toc ul > li{
+	flex-basis: 2em;
+	width: 125px;
 }
 .toc a {
     text-decoration: none;
@@ -143,10 +148,7 @@ h5 {
 .toc a:hover {
     text-shadow: 1px 1px 1px rgba(17, 17, 154, 0.7);
     font-weight: bolder;
-    font-size: 1.4em;
-}
-.toc li{
-    margin: 4px 0px;
+	font-size: 1.4em;
 }
 li::marker{
     content: none;
@@ -157,16 +159,18 @@ li::marker{
 	right: 0;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: baseline;
 	width: 300px;
 }
 .previous{
 	text-align: center;
 	flex: 1;
+	height: 20px;
 }
 .next{
 	text-align: center;
 	flex: 1;
+	height: 20px;
 }
 .index_para{
     position: fixed;
@@ -175,7 +179,8 @@ li::marker{
     z-index: -1;
     opacity: 60%;
 }
-/*Live 2D*/
+
+/*-- Live 2D Container --*/
 .l2d-container{
     position: fixed;
     left: 10px;
@@ -184,36 +189,22 @@ li::marker{
 .l2d-container img{
     max-width: 150px;
 }
-/*正文*/
+
+/*-- Main Content --*/
 .indent p {
     text-indent: 2em;
 }
 p.inline_img img {
 	max-width: 40%;
 }
-/*-- Special Function --*/
-
-div .command_screen{
-    margin: 0 0 0 2em;
-    padding: 0.1em 0em 0.2em 0em;
-}
-.command_screen summary{
-    font-weight: bold;
-    margin: 0.7em;
-}
-.command_screen p{
-    color: #0DD424;
-    font-weight: bold;
-    margin: 0.7em;
-}
-p a{
+.indent p > a{
 	text-decoration-line: none;
 	color: #3366cc;
 }
-p a:hover{
+.indent p > a:hover{
 	text-decoration-line: underline;
 }
-/*图片配文字格式*/
+/*- Pictures -*/
 .box_1img {
     max-width: 400px;
     margin: 2px 0px 0px 6em;
@@ -249,7 +240,32 @@ video{
 	max-width: 500px;
 	margin-left: 2em;
 }
-/*Chat CSS*/
+/*- Inner chat -*/
+div.innerconversation{
+    background-color: rgba(245, 245, 245, 0.897);
+	min-width: 500px;
+}
+.innerconversation p.time{
+	background-color: rgba(245, 245, 245, 0.897);
+}
+
+/*-- Special Function --*/
+/*- Command Screen -*/
+div .command_screen{
+    margin: 0 0 0 2em;
+    padding: 0.1em 0em 0.2em 0em;
+}
+.command_screen summary{
+    font-weight: bold;
+    margin: 0.7em;
+}
+.command_screen p{
+    color: #0DD424;
+    font-weight: bold;
+    margin: 0.7em;
+}
+
+/*- Chat CSS -*/
 div.conversation{
     background-color: rgba(245,245,245,0.83);
     padding-top: 0.5em;
@@ -366,16 +382,8 @@ chat{
     display: none;
 }
 
-/*Inner chat*/
-div.innerconversation{
-    background-color: rgba(245, 245, 245, 0.897);
-	min-width: 500px;
-}
-.innerconversation p.time{
-	background-color: rgba(245, 245, 245, 0.897);
-}
-/*CSS of New Tags */
-/*CSS of <hidding> tags*/
+/*- CSS of New Tags -*/
+/* CSS of <hidding> tags */
 hidding{
     text-shadow: none;
     color: #252525;
@@ -406,12 +414,13 @@ hidding > a:hover{
     color: #52C5FF;
 }
 
-/*CSS of Special Self tags*/
+/* CSS <note> tags */
 note{
     font-style: italic;
     color: rgba(94,136,198,0.85);
 }
-/*Serveral Colors*/
+
+/*-- Serveral Colors --*/
 .colorc1 {
     color: #68718e;
 }
@@ -426,7 +435,7 @@ note{
 	text-shadow: 1px 1px 2px #9A282A;
 }
 
-/*Special Characters*/
+/*-- Special Characters --*/
 @font-face {
 	font-family: 'Special';
 	src: url("../fonts/Spcial_Character.woff2");
