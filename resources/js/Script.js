@@ -85,61 +85,73 @@ function Side_Bar(){
     }
     Sidebar = !Sidebar;
 }
-//这一块是为了实现类似微信聊天那样的左右以及框功能的。构想是人名后加冒号，通过innerHTML加上<span>代码块，分离代码计算，生成效果。效果见聊天
-function Chat_new(myself,others,location,format,subjects,is_inner){
+//实现聊天气泡功能。通过预处理分离内容与对象，并使用CSS完成.
+function Chat_new(myself, others, location, format, subjects, is_inner){
     var chat_list = location.getElementsByTagName("chat"); // Get List
     var chat_num = chat_list.length;
     var mlength = myself.length;
     var olength = others.length;
     function Chat_Others(container, name, content, line){
+		let indicator = document.createElement("div");
+		indicator.classList.add("indicator","left_indicator");
         name.innerHTML = others;
         content.innerHTML = line.slice(olength);
         container.className = "con_container_l";
         name.className = "con_name_l";
         content.className = "con_content_l";
         container.appendChild(name);
+		container.appendChild(indicator);
         container.appendChild(content);
         return container;
     }
     function Chat_Myself(container, name, content, line){
+		let indicator = document.createElement("div");
+		indicator.classList.add("indicator", "right_indicator");
         name.innerHTML = myself;
         content.innerHTML = line.slice(mlength);
         container.className = "con_container_r";
         name.className = "con_name_r";
         content.className = "con_content_r";
-        container.appendChild(content)
+        container.appendChild(content);
+		container.appendChild(indicator);
         container.appendChild(name);
         return container;
     }
     function Render_QQ(box, target){
         if(target == "others"){
-            box.children[1].className += " chat_others_QQ";
+            box.children[2].classList.add("chat_others_QQ");
+			box.children[1].classList.add("indicator_others_QQ");
         }
         if(target == "myself"){
             if(subjects == "others"){
-                box.children[0].className += " chat_myself_QQ_2";
+                box.children[0].classList.add("chat_myself_QQ_2");
+				box.children[1].classList.add("indicator_others_QQ_2");
             }
             else{
-                box.children[0].className +=  " chat_myself_QQ";
+                box.children[0].classList.add("chat_myself_QQ");
+				box.children[1].classList.add("indicator_myself_QQ");
             }
         }
         location.appendChild(box);
     }
     function Render_WeChat(box, target){
         if(target == "others"){
-            box.children[1].className += " chat_others_WeChat";
+            box.children[2].classList.add("chat_others_WeChat");
+			box.children[1].classList.add("indicator_others_WeChat");
         }
         if(target == "myself"){
             if(subjects == "others"){
-                box.children[0].className += " chat_myself_WeChat_2";
+                box.children[0].classList.add("chat_myself_WeChat_2");
+				box.children[1].classList.add("indicator_myself_WeChat_2");
             }
             else{
-                box.children[0].className +=  " chat_myself_WeChat";
+                box.children[0].classList.add("chat_myself_WeChat");
+				box.children[1].classList.add("indicator_myself_WeChat");
             }
         }
         location.appendChild(box);
     }
-    for(var i = 0; i < chat_num; i++){
+    for(var i = 0; i < chat_num; i++){ //主程序
         var container = document.createElement("div");
         var name = document.createElement("p");
         var content = document.createElement("p");

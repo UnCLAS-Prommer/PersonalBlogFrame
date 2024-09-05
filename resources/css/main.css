@@ -1,4 +1,4 @@
-/*-- Body --*/
+/*---- Body ----*/
 html, body {
     background-color: #fff;
     font-size:16px;
@@ -29,7 +29,7 @@ div.wrapper_extend{
     margin-right: 80px;
 }
 
-/*-- Titles --*/
+/*---- Titles ----*/
 h1 {
     font-size: 2.5em;
     line-height: 1.2em;
@@ -65,7 +65,7 @@ h5 {
     font-weight: bold;
 }
 
-/*-- Index --*/
+/*---- Index ----*/
 .index{
     float: none;
 /*    overflow-y: auto;*/
@@ -110,8 +110,8 @@ h5 {
 .toc_hidden{
     display: none;
 }
-/*- Index Content -*/
-/* Index Buttons */
+/*--- Index Content ---*/
+/*-- Index Buttons --*/
 .index_button{
     text-decoration: none;
     font-size: 0.7em;
@@ -180,7 +180,7 @@ li::marker{
     opacity: 60%;
 }
 
-/*-- Live 2D Container --*/
+/*---- Live 2D Container ----*/
 .l2d-container{
     position: fixed;
     left: 10px;
@@ -190,7 +190,7 @@ li::marker{
     max-width: 150px;
 }
 
-/*-- Main Content --*/
+/*---- Main Content ----*/
 .indent p {
     text-indent: 2em;
 }
@@ -204,7 +204,14 @@ p.inline_img img {
 .indent p > a:hover{
 	text-decoration-line: underline;
 }
-/*- Pictures -*/
+.indent h5 > a{
+	text-decoration-line: none;
+	color: #3366cc;
+}
+.indent h5 > a:hover{
+	text-decoration-line: underline;
+}
+/*--- Pictures ---*/
 .box_1img {
     max-width: 400px;
     margin: 2px 0px 0px 6em;
@@ -240,7 +247,7 @@ video{
 	max-width: 500px;
 	margin-left: 2em;
 }
-/*- Inner chat -*/
+/*--- Inner chat ---*/
 div.innerconversation{
     background-color: rgba(245, 245, 245, 0.897);
 	min-width: 500px;
@@ -249,8 +256,8 @@ div.innerconversation{
 	background-color: rgba(245, 245, 245, 0.897);
 }
 
-/*-- Special Function --*/
-/*- Command Screen -*/
+/*---- Special Function ----*/
+/*--- Command Screen ---*/
 div .command_screen{
     margin: 0 0 0 2em;
     padding: 0.1em 0em 0.2em 0em;
@@ -265,7 +272,8 @@ div .command_screen{
     margin: 0.7em;
 }
 
-/*- Chat CSS -*/
+/*--- Chat CSS ---*/
+/*-- Background and Basic Elements --*/
 div.conversation{
     background-color: rgba(245,245,245,0.83);
     padding-top: 0.5em;
@@ -297,6 +305,37 @@ p.time{
     text-indent: 0em !important;
 	clear: both;
 }
+/*-- The little indicator --*/
+div.indicator{
+	content: "";
+	width: 0;
+	height: 0;
+	margin-top: 4px;
+	border-top: 5px solid transparent!important;
+	border-bottom: 5px solid transparent!important;
+}
+div.left_indicator{
+	border-right: 10px solid;
+	border-left-color: transparent!important;
+}
+div.right_indicator{
+	border-left: 10px solid;
+	border-right-color: transparent!important;
+}
+/*- Color of the indicator -*/
+div.indicator_others_WeChat, div.indicator_myself_WeChat_2{
+	border-color: #CECECE;
+}
+div.indicator_myself_WeChat{
+	border-color: #5EC01B;
+}
+div.indicator_others_QQ, div.indicator_others_QQ_2{
+	border-color: #C2C2C2;
+}
+div.indicator_myself_QQ{
+	border-color: #09A1DA;
+}
+/*- Color of the Content Box -*/
 .chat_others_WeChat{
     border-color: #EDEDED #EDEDED #EDEDED #CECECE;
     background-color:white;
@@ -321,10 +360,9 @@ p.time{
 }
 .chat_myself_QQ_2{
     border-color: #EDEDED #C2C2C2 #EDEDED #EDEDED;
-    color:black;
+    color: black;
     background-color: #E5E5E5;
 }
-
 div.con_container_l, div.con_container_r{
 	display: flex;
     padding: 5px 3px;
@@ -337,9 +375,8 @@ div.con_container_l{
 div.con_container_r{
     float: right;
 }
-
 .con_name_l, .con_name_r{
-    padding-top: 10px;
+    padding-bottom: 10px;
 	text-indent: 0 !important;
 }
 .con_name_l{
@@ -382,8 +419,8 @@ chat{
     display: none;
 }
 
-/*- CSS of New Tags -*/
-/* CSS of <hidding> tags */
+/*--- CSS of New Tags ---*/
+/*-- CSS of <hidding> tags --*/
 hidding{
     text-shadow: none;
     color: #252525;
@@ -414,13 +451,13 @@ hidding > a:hover{
     color: #52C5FF;
 }
 
-/* CSS <note> tags */
+/*-- CSS <note> tags --*/
 note{
     font-style: italic;
     color: rgba(94,136,198,0.85);
 }
 
-/*-- Serveral Colors --*/
+/*---- Serveral Colors ----*/
 .colorc1 {
     color: #68718e;
 }
@@ -435,7 +472,7 @@ note{
 	text-shadow: 1px 1px 2px #9A282A;
 }
 
-/*-- Special Characters --*/
+/*---- Special Characters ----*/
 @font-face {
 	font-family: 'Special';
 	src: url("../fonts/Spcial_Character.woff2");
